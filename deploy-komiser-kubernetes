@@ -1,0 +1,13 @@
+This deployment will deploy:
+
+pod with komiser and redis.
+It will set up a service with node port for linking with AWS ALB Ingress controller
+Setup appropriate ALB Ingress controller
+Optional to change the service type to LoadBalncer or use any other Ingress type.
+
+To deploy:
+
+First create a secret for aws credentials
+kubectl create secret generic -n monitoring komiser --from-literal key='aws_key' --from-literal secret='aws_secret'
+Apply yaml files
+kubectl apply -f ./deployment/
